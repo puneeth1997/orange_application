@@ -1,0 +1,47 @@
+<div class="heading"><h1 style="text-align:center"> User Details </h1>
+
+
+
+
+<%= image_tag @emp.image.url(:thumb) %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+
+      <th>UserName</th>
+
+      <th>Points</th>
+      
+    </tr>
+
+
+
+
+
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td ><%= @emp.email %></td>
+       
+        <td  ><%= @emp.points %></td>
+
+        <td class="col-md-1"><%= link_to 'redeem points', "https://www.flipkart.com",class: "btn btn-xs btn-danger"%></td>
+
+               
+      </tr>
+    
+  </tbody>
+</table>
+<div class="col-md-2 ml">
+  <%= link_to 'User logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-xs btn-danger" %>
+</div>
+</br>
+<div class="col-md-2 ml">
+<% if warden.authenticated?(:admin) && warden.authenticated?(:user) %>
+<%= link_to 'stop impersonate',stop_impersonate_path,class: "btn btn-xs btn-danger" %>
+<% end %>
+</div>
+</div>

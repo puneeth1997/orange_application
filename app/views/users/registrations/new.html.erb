@@ -1,0 +1,61 @@
+<h2 class="paddingBetweenCols">User Sign up</h2>
+<div class="paddingBetweenCols b1">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+      <div class="row">
+        <p class="paddingBetweenCols">User Id/Email:</p>
+        <div class="col-md-4">
+             <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "Email", autofocus: true ,class: "form-control search-box input-lg" %>
+        </div>
+      </div>
+      <div class="row m1">
+        <p class="paddingBetweenCols">Password:</p>
+        <div class="col-md-4">
+          <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+           <%= f.password_field :password, autocomplete: "new-password" , placeholder: "password", autofocus: true ,class: "form-control search-box input-lg" %>
+        </div>
+      </div>
+      <div class="row m1">
+        <p class="paddingBetweenCols">Password confirmation:</p>
+        <div class="col-md-4">
+         <%= f.password_field :password_confirmation, autocomplete: "new-password" , placeholder: "re-enter password", autofocus: true ,class: "form-control search-box input-lg" %>
+        </div>
+      </div>
+
+
+      <div class="row m1">
+        <p class="paddingBetweenCols">Points:</p>
+        <div class="col-md-4">
+           <%= f.number_field :points, autocomplete: "points" , placeholder: "Points", autofocus: true ,class: "form-control search-box input-lg" %>
+        </div>
+      </div>
+      <div class="row m1">
+        <p class="paddingBetweenCols">Date Of Join:</p>
+        <div class="col-md-4">
+         <%= f.date_field :doj, autocomplete: "doj" , placeholder: "Date of join", autofocus: true ,class: "form-control search-box input-lg" %>
+        </div>
+      </div>
+
+      
+
+      </div>
+      <div class= "row m1 m2">
+        <div class="col-md-2">
+          <%= button_tag(type: :submit, class: "btn btn-primary btn-success") do %>
+            <i class="fa fa-search"></i> Sign up
+         <% end %>
+        </div>
+     </div> 
+
+
+<% end %>
+</div>
+
+<div class="col-md-2 m1">
+<%= link_to 'Admin Homepage', dashboard_admin_dashboard_path, class: "btn btn-xs btn-success" %>
+</div>
+
+<%#= render "users/shared/links" %>

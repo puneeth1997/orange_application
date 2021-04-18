@@ -1,0 +1,62 @@
+<div id="login-form">
+
+  <!-- <input type="radio" checked id="login" name="switch" class="hide"> -->
+  <input type="radio" id="signup" name="switch" class="hide">
+
+<div>
+  <ul class="form-header">
+    <!-- <li><label for="login"><i class="fa fa-lock"></i> LOGIN<label for="login"></li> -->
+    <li><label for="signup"><i class="fa fa-credit-card"></i> REGISTER</label></li>
+  </ul>
+</div>
+
+<div class="section-out">
+  <section class="signup-section">
+    <div class="login">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "admins/shared/error_messages", resource: resource %>
+
+        <ul class="ul-list">
+          <li>    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email Id", class: 'input' %><span class="icon"><i class="fa fa-user"></i></span></li>
+          <li><% if @minimum_password_length %>
+                   <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password",placeholder: "Enter password", class: 'input' %><span class="icon"><i class="fa fa-lock"></i></span></li>
+          <li><%= f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder: "Re-enter password", class: 'input' %><span class="icon"><i class="fa fa-lock"></i></span></li>
+          <li><input type="checkbox" id="check1"> <label for="check1">I accept terms and conditions</label></li>
+          <li><input type="submit" value="Sign Up" class="btn"></li>
+        </ul>
+      <% end %>
+    </div>
+  </section>
+</div>
+</div>
+<%= render "admins/shared/links" %>
+<!-- 
+<%#= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%#= render "admins/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%#= f.label :email %><br />
+    <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%#= f.label :password %>
+    <%# if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <%# end %><br />
+    <%#= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%#= f.label :password_confirmation %><br />
+    <%#= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%#= f.submit "Sign up" %>
+  </div>
+<%# end %> -->
+
+<%#= render "admins/shared/links" %>

@@ -1,0 +1,68 @@
+<div class="col-md-2 m1">
+    <%= link_to 'Home', root_path,class: "btn btn-xs btn-success"%>
+</div>
+<div class="row">
+<div id="login-form">
+
+<input type="radio" checked id="login" name="switch" class="hide">
+<!-- <input type="radio" id="signup" name="switch" class="hide"> -->
+
+<div>
+<ul class="form-header">
+<li><label for="login"><i class="fa fa-lock"></i> LOGIN<label for="login"></li>
+<!-- <li><label for="signup"><i class="fa fa-credit-card"></i> REGISTER</label></li> -->
+</ul>
+</div>
+
+<div class="section-out">
+<section class="login-section">
+<div class="login">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+    <ul class="ul-list">
+      <li><%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email Id", class: 'input' %><span class="icon"><i class="fa fa-user"></i></span></li>
+      <li><%= f.password_field :password, autocomplete: "current-password",placeholder: "password", class: 'input' %><span class="icon"><i class="fa fa-lock"></i></span></li>
+      <% if devise_mapping.rememberable? %>
+        <li><%= f.check_box :remember_me %>
+          <%= f.label :remember_me %></li>
+        <li>
+      <% end %>
+      <input type="submit" value="Log In" class="btn"></li>
+      </ul>
+  <% end %>
+
+  <%= render "admins/shared/links" %>
+</div>
+
+<!-- <div class="social-login">Or sign in with &nbsp;
+<a href="" class="fb"><i class="fa fa-facebook"></i></a>
+<a href="" class="tw"><i class="fa fa-twitter"></i></a>
+<a href="" class="gp"><i class="fa fa-google-plus"></i></a>
+<a href="" class="in"><i class="fa fa-linkedin"></i></a>
+</div> -->
+</section>
+
+<!-- <section class="signup-section">
+<div class="login">
+  <%#= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%#= render "admins/shared/error_messages", resource: resource %>
+
+        <ul class="ul-list">
+          <li>    <%#= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email Id", class: 'input' %><span class="icon"><i class="fa fa-user"></i></span></li>
+          <li><%# if @minimum_password_length %>
+                   <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <%# end %><br />
+              <%#= f.password_field :password, autocomplete: "new-password",placeholder: "Enter password", class: 'input' %><span class="icon"><i class="fa fa-lock"></i></span></li>
+          <li><#%= f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder: "Re-enter password", class: 'input' %><span class="icon"><i class="fa fa-lock"></i></span></li>
+          <li><input type="checkbox" id="check1"> <label for="check1">I accept terms and conditions</label></li>
+          <li><input type="submit" value="Sign Up" class="btn"></li>
+        </ul>
+      <%# end %>
+</div>
+
+
+</section> -->
+</div>
+
+</div>
+</div>

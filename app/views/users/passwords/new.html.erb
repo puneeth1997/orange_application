@@ -1,0 +1,31 @@
+<!-- <h2>Forgot your password?</h2> -->
+<div id="login-form">
+<h2>Forgot your password?</h2>
+<!-- <input type="radio" checked id="login" name="switch" class="hide"> --> 
+<!-- <input type="radio" id="signup" name="switch" class="hide"> -->
+
+<div>
+<ul class="form-header">
+<!-- <li><label for="login"><i class="fa fa-lock"></i> Forgot your password?<label for="login"></li>
+ --><!-- <li><label for="signup"><i class="fa fa-credit-card"></i> REGISTER</label></li> -->
+</ul>
+</div>
+
+<div class="section-out">
+<section class="login-section">
+<div class="login">
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+    <ul class="ul-list">
+      <li><%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email Id", class: 'input' %><span class="icon"><i class="fa fa-user"></i></span></li>
+      <li><input type="submit" value="send me reset password instructions" class="btn"></li>
+    </ul>
+
+  
+<% end %>
+
+<%= render "users/shared/links" %>
+</div>
+</section>
+</div>

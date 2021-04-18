@@ -1,0 +1,35 @@
+
+<h1 style="text-align:center">User Update Form </h1>
+<div class="paddingBetweenCols b1">
+  <%= form_tag user_update_points_path, method: 'put' do %>
+      <div class="row">
+        <p class="paddingBetweenCols">User Id/Email:</p>
+        <div class="col-md-4">
+             <%= text_field_tag :email, @users.email , placeholder: "Email", autofocus: true ,class: "form-control search-box input-lg" %>
+        </div>
+      </div>
+      <div class="row m1">
+        <p class="paddingBetweenCols">POINTS:</p>
+        <div class="col-md-4">
+           <%= number_field_tag :points, @users.points , placeholder: "Points", autofocus: true ,class: "form-control search-box input-lg" %>
+        </div>
+      </div>
+      <div class="row m1">
+        <p class="paddingBetweenCols">Date Of Join:</p>
+        <div class="col-md-4">
+         <%= date_field_tag :doj, @users.doj , placeholder: "Date of join", autofocus: true ,class: "form-control search-box input-lg" %>
+        </div>
+      </div>
+      <div class= "row m1 m2">
+        <div class="col-md-2">
+          <%= button_tag(type: :submit, class: "btn btn-primary btn-success") do %>
+            <i class="fa fa-search"></i> Update
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+</div>
+<br>
+<div class="col-md-2">
+<%= link_to 'Back',list_user_list_path ,class: "btn btn-xs btn-success"%>
+</div>
